@@ -1,0 +1,1 @@
+package com.objetivait.laboratory.serviceaddress.web.rest.errors;

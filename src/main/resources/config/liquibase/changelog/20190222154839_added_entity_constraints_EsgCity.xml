@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity EsgCity.
+    -->
+    <changeSet id="20190222154839-2" author="objetivait" >
+        
+        <addForeignKeyConstraint baseColumnNames="esg_uf_id"
+                                 baseTableName="esg_city"
+                                 constraintName="fk_esg_city_esg_uf_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="esg_uf"/>
+
+    </changeSet>
+</databaseChangeLog>

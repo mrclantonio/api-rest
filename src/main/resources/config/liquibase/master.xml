@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <include file="config/liquibase/changelog/start.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190222154837_added_entity_EsgContry.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190222154838_added_entity_EsgUF.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190222154839_added_entity_EsgCity.xml" relativeToChangelogFile="false"/>
+
+    <include file="config/liquibase/changelog/20190222154838_added_entity_constraints_EsgUF.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190222154839_added_entity_constraints_EsgCity.xml" relativeToChangelogFile="false"/>
+
+</databaseChangeLog>

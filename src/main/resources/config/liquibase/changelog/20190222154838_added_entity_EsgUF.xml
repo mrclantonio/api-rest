@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="postgresql, h2"/>
+    
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity EsgUF.
+    -->
+    <changeSet id="20190222154838-1" author="objetivait">
+        <createTable tableName="esg_uf" remarks="Class EsgUF. @author marcelo.alves">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nm_uf" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cd_uf" type="varchar(10)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_esg_uf_cd_uf" />
+            </column>
+
+            <column name="ac_uf" type="varchar(10)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_esg_uf_ac_uf" />
+            </column>
+
+            <column name="esg_contry_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>
